@@ -10,7 +10,7 @@
  */
 
 
-const sayHello = (name) =>{return `Hello, ${name}`}
+const sayHello = (name) => `Hello, ${name}`
 
 
 
@@ -60,13 +60,7 @@ const random = Math.floor((Math.random() * 3) + 1);
  * different result everytime you refresh the page if you are using the random
  * number)
  */
-const isTwo = (num) =>{
-    if (num % 2 === 0 ){
-        return true;
-    }else{
-        return false;
-    }
-}
+const isTwo = (num) => num === 2;
 console.log(random);
 console.log(isTwo(random));
 
@@ -84,9 +78,7 @@ console.log(isTwo(random));
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
 
-const calculateTip = (tipPercentage, bill) =>{
-    return bill * tipPercentage;
-}
+const calculateTip = (tipPercentage, bill) => bill * tipPercentage;
 
 /**
  * TODO:
@@ -116,8 +108,6 @@ alert(`The tip is $${tip}`);
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
-const applyDiscount = (origPrice, discountPercentage)=>{
-    return origPrice * (1 + discountPercentage);
-}
+const applyDiscount = (origPrice, discountPercentage)=> origPrice * (1 + discountPercentage);
 
 console.log("The final price is $" + applyDiscount(100, .2));
