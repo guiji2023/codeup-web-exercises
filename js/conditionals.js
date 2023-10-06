@@ -22,23 +22,43 @@
  * console.logging the function's return value
  */
 
+// const analyzeColor =  (color) =>{
+//     if(color === 'blue') {     return 'blue is the color of the sky';}
+//     else if (color ==='red'){  return 'Strawberries are red';}
+//     else{                      return `I don't know anything about ${color}`;}
+// }
+
 // Don't change the next two lines!
 // These lines create two variables for you:
 // - `colors`: a list of the colors of the rainbow
 // - `randomColor`: contains a single random color value from the list (this
 //                  will contain a different color every time the page loads)
-const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
-const randomColor = colors[Math.floor(Math.random() * colors.length)];
+// const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+// const randomColor = colors[Math.floor(Math.random() * colors.length)];
 /**
  * TODO:
  * Pass the `randomColor` variable to your 'analyzeColor' function and console.log the results.
  * You should see a different message every time you refresh the page
  */
 
+
 /**
  * TODO:
  * Comment out the code above, and refactor your function to use a switch-case statement
  */
+const analyzeColor =  (color) =>{
+    switch (color){
+        case 'blue':
+            return 'blue is the color of the sky';
+            break;
+        case 'red':
+            return 'Strawberries are red';
+            break;
+
+        default:
+            return `I don't know anything about ${color}`;
+    }
+ }
 
 /**
  * TODO:
@@ -48,6 +68,7 @@ const randomColor = colors[Math.floor(Math.random() * colors.length)];
  */
 
 /* ########################################################################## */
+alert(analyzeColor(prompt("What color do you like?").toLowerCase()));
 
 /**
  * TODO:
@@ -69,6 +90,28 @@ const randomColor = colors[Math.floor(Math.random() * colors.length)];
  * return value.
  */
 
+const calculateTotal = (luckyNumber, originPrice) =>{
+    switch (luckyNumber){
+        case 1:
+            return originPrice * (1-0.1);
+            break;
+        case 2:
+            return originPrice * (1-0.25);
+            break;
+        case 3:
+            return originPrice * (1-0.35);
+            break;
+        case 4:
+            return originPrice * (1-0.5);
+            break;
+        case 5:
+            return 0;
+            break;
+    }
+}
+
+
+
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 5.
@@ -78,8 +121,12 @@ const randomColor = colors[Math.floor(Math.random() * colors.length)];
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// const luckyNumber = Math.floor(Math.random() * 6);
+let luckyNumber = Math.floor(Math.random() * 6);
+let price = parseFloat(prompt("What is your original bill?"));
 
+alert(`Your lucky number is ${luckyNumber},
+       Your original bill is $${price},
+       You price after discount is $${calculateTotal(luckyNumber,price)}`);
 /**
  * TODO:
  * Write some JavaScript that uses a `confirm` dialog to ask the user if they
@@ -98,3 +145,19 @@ const randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+
+let isConfirmed = confirm("Would you like to enter a number?");
+const isOdd =(num)=> num % 2 === 1? `${num} is an odd number.`:`${num} is an even number.`;
+const isPositive =(num) => num > 0? `${num} is a positive number.`:`${num} is negative number.`;
+
+
+if (isConfirmed){
+    let input = prompt("Enter a number");
+    if (!isNaN(input)){
+        input = Number(input);
+        alert(isOdd(input));
+        alert(`${input} plus is ${input +100}`);
+        alert(isPositive(input));
+    } else{alert(`${input} is an incorrect data type`)}
+}
+
