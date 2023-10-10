@@ -54,7 +54,6 @@ const analyzeColor =  (color) =>{
         case 'red':
             return 'Strawberries are red';
             break;
-
         default:
             return `I don't know anything about ${color}`;
     }
@@ -156,7 +155,7 @@ if (isConfirmed){
     if (!isNaN(input)){
         input = Number(input);
         alert(isOdd(input));
-        alert(`${input} plus is ${input +100}`);
+        alert(`${input} plus 100 is ${input +100}`);
         alert(isPositive(input));
     } else{alert(`${input} is an incorrect data type`)}
 }
