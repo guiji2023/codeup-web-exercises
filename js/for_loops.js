@@ -18,6 +18,15 @@ for (let i = 0; i <11; i++){
 }
 
 
+const numberPyramid = (num)=>{
+    for (let i = 1; i<=num; i++){
+        const message = i.toString().repeat(i);
+        console.log(message);
+    }
+}
+numberPyramid(9);
+
+
 for(let i = 100; i > 0; i = i- 5){
     console.log(i);
 }
