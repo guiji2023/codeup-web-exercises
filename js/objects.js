@@ -57,9 +57,27 @@
     ];
 
     function discount ({name, amount}){
-        console.log(name);
-        c
+        console.log(`Customer name: ${name}`);
+        console.log(`The amount before discount: $${amount}`);
+        if (amount >200){
+            console.log(`The discount: $${amount * 0.12}`);
+            console.log(`The amount after discount: $${amount * 0.88}`)
+        } else{
+            console.log(`No discount applied`);
+        }
+        console.log(`===================================`)
     }
+
+    for (let i of shoppers){
+        discount(i);
+    }
+
+
+    //forEach method
+    // shoppers.forEach((i =>discount(i)));
+
+
+
 
 
 
@@ -76,6 +94,48 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+
+    const books = [
+        {
+            title: "The Great Gatsby",
+            author: {
+                firstName: "F. Scott",
+                lastName: "Fitzgerald"
+            }
+        },
+        {
+            title: "To Kill a Mockingbird",
+            author: {
+                firstName: "Harper",
+                lastName: "Lee"
+            }
+        },
+        {
+            title: "1984",
+            author: {
+                firstName: "George",
+                lastName: "Orwell"
+            }
+        },
+        {
+            title: "The Lord of the Rings",
+            author: {
+                firstName: "J.R.R.",
+                lastName: "Tolkien"
+            }
+        },
+        {
+            title: "Harry Potter and the Sorcerer's Stone",
+            author: {
+                firstName: "J.K.",
+                lastName: "Rowling"
+            }
+        }
+    ];
+
+    console.log(books[0].title)
+    console.log(books[0].author.firstName)
+    console.log(books[0].author.lastName)
 
     /**
      * TODO:
@@ -102,6 +162,19 @@
      *      ...
      */
 
+    console.log(`\n\n`);
+
+    function display ({title, author}){
+        console.log(`Title: ${title}`);
+        console.log(`Author: ${author.firstName} ${author.lastName} `)
+    }
+
+    books.forEach((book, index)=> {
+        console.log(`Book ${index +1}`);
+        display(book);
+    });
+
+
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -112,5 +185,35 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+
+
+    function createBook (title, author){
+        const book = {
+            Title: title,
+            Author: author
+        }
+        return book;
+    }
+
+    let newBooks=[];
+
+    for (let i in books){
+       let book = createBook(books[i].title, `${books[i].author.firstName} ${books[i].author.lastName}`);
+       newBooks.push(book);
+    }
+
+    function showBookInfo ({Title, Author}){
+        console.log(`Title: ${Title}`);
+        console.log(`Author: ${Author}`);
+    }
+
+
+
+    newBooks.forEach((book, index)=>{
+        console.log(`Book ${index+1}`);
+        showBookInfo(book);
+    })
+
+
 
 })();
