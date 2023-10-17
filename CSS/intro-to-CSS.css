@@ -1,0 +1,27 @@
+<!--
+style an element-- >
+h1 {
+    color: red;
+    text-transform: uppercase;
+    letter-spacing: 5px
+}
+
+p {
+    font-style: italic;
+    color: darkcyan;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+body {
+    font-family: Papyrus;
+    color: black;
+}
+
+/*style a class*/
+.article-background {
+    background: burlywood;
+}
