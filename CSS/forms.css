@@ -1,0 +1,18 @@
+input {
+    min-height: 40px;
+    border-radius: 8px;
+    border: 1px solid darkblue;
+    padding-left: 10px;
+    color: red;
+    font-family: inherit;
+    margin-bottom: 5px;
+
+}
+
+input::placeholder {
+    font-family: inherit;
+}
+
+input:focus {
+    outline-color: red;
+}

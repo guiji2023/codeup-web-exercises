@@ -1,4 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital@1&family=Roboto:ital,wght@0,300;0,500;1,700&display=swap');
+
+body {
+    font-family: 'Lobster Two', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    background-color: antiquewhite;
+    background-image: url('https://images.pexels.com/photos/3225517/pexels-photo-3225517.jpeg');
+    background-size: cover;
+    color: saddlebrown;
+}
 
 .fancy-header {
     color: purple;
 }
+
+
+header {
+    text-decoration-color: dodgerblue;
+    text-decoration: underline;
+    text-align: center;
+}
+
+
+.core-values ul {
+    list-style-type: lower-alpha;
+    margin-right: 100px;
+}
+
+.process {
+    list-style-type: square;
+    margin-right: 100px;
+}
+
+.vision ul {
+    list-style-type: upper-alpha;
+
+}
+
+tr {
+    font-size: 1.2rem;
+    color: antiquewhite;
+}
+
+td {
+    padding: 10px 20px;
+}
+
+
+.mid-div {
+    display: flex;
+}
+
+h2 {
+    margin-left: 50px;
+}
+
+a {
+
+    transition: all ease 0.9s;
+}
+
+a:hover {
+    color: black;
+}
+
+figure > img {
+    width: 400px;
+    aspect-ratio: 4/4;
+    object-fit: cover;
+    object-position: center;
+    transition: all ease-out 0.3s;
+}
+
+figure > :hover {
+    transform: scale(1.1);
+}
+
