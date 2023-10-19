@@ -1,19 +1,14 @@
 * {
     margin: 0;
     padding: 0;
-    -webkit-font-smoothing: antialiased;
-}
+    image: resets;
 
-a {
-    color: inherit;
-    text-decoration: unset;
-}
-
-ul {
-    list-style: none;
+    box-sizing: border-box;
 }
 
 img {
     display: block;
     max-width: 100%;
 }
+
+

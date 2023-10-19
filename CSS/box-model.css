@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+    margin: 0
+}
+
+
+.box {
+    min-height: 300px;
+    background-color: red;
+    border: 5px solid #000;
+    width: 300px;
+    padding: 20px;
+    margin: 10px;
+    display: inline-block;
+}
+
+.child-box {
+    height: 100px;
+    width: 100px;
+    background-color: blue;
+
+}
