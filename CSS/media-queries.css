@@ -1,0 +1,94 @@
+button {
+  border: none;
+  background-color: white;
+}
+
+.alert-info {
+  display: none;
+}
+
+header {
+  padding-top: 30px;
+  width: 100%;
+}
+nav {
+  width: 100%;
+}
+
+.container.hero img {
+  width: 100%;
+}
+
+footer {
+  width: 100%;
+}
+
+li {
+  list-style: none;
+}
+a {
+  color: blue;
+  font-weight: bold !important;
+}
+
+@media screen and (max-width: 900px) {
+  header {
+    text-align: center;
+    padding: 0;
+  }
+  .container .column {
+    width: 100%;
+  }
+
+  .hidden-box {
+    margin-top: 20px;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .alert-info {
+    display: flex;
+    width: 100%;
+    background-color: rgb(168, 234, 248);
+    padding: 20px;
+    justify-content: center;
+  }
+
+  ul.nav-links a {
+    display: block;
+    width: 100%;
+    background-color: rgb(213, 207, 207);
+    padding: 20px;
+  }
+  ul.nav-links {
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+
+  .container .row {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .d-flex {
+    flex-direction: column;
+  }
+
+  h1 {
+    margin-bottom: 30px;
+  }
+
+  .my-footer {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+  }
+  #social-media-links {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  #main {
+    margin-top: 30px;
+  }
+}

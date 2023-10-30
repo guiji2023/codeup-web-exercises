@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media Queries</title>
+    <link rel="stylesheet" href="./CSS/resets.css" />
+    <link rel="stylesheet" href="./CSS/layout.css" />
+    <link rel="stylesheet" href="./CSS/media-queries.css" />
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <div class="container hidden-box">
+        <div class="row">
+          <div class="column">
+            <div class="alert-info">
+              <a href="#main">Skip to main content</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <header class="container">
+        <div class="my-header row align-items-center">
+          <div class="column">
+            <h1>Company</h1>
+          </div>
+          <div class="column">
+            <nav>
+              <ul class="nav-links d-flex gap-30 justify-content-end">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Work</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      <section class="container hero">
+        <div class="header-img row justify-center">
+          <img src="https://via.placeholder.com/900x400?" alt="" />
+        </div>
+      </section>
+
+      <section id="main" class="main container">
+        <div class="row gap-30">
+          <div class="column gap-20 flex-grow-2">
+            <h2>Main Section</h2>
+            <p>
+              Amet lorem accusantium maxime quis iusto. Sit aliquid quidem at
+              animi commodi, iusto harum, non. Accusantium sequi consectetur
+              deleniti soluta tempora. Maxime maiores blanditiis veritatis vitae
+              amet maiores sapiente in?
+            </p>
+          </div>
+
+          <div class="column gap-20">
+            <h2>Sub-section</h2>
+            <p>
+              Amet optio quidem voluptatum neque esse at saepe, reiciendis
+              quaerat architecto unde minima aspernatur harum cum totam non amet
+              soluta. Ea quae odio harum magni ab vitae tenetur. Itaque numquam!
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <footer class="container py-30 my-30">
+        <div class="row align-items-center my-footer">
+          <div class="column">
+            <p class="copyright">(c) 2017 All rights reserved</p>
+          </div>
+          <div class="column">
+            <div
+              id="social-media-links"
+              class="d-flex gap-5 justify-content-end"
+            >
+              <button action="">
+                <a href="https://www.facebook.com/">
+                  <img src="./img/icons8-facebook.svg" alt="fb"
+                /></a>
+              </button>
+              <button>
+                <a href="https://www.instagram.com/"
+                  ><img src="./img/icons8-instagram.svg" alt="ig"
+                /></a>
+              </button>
+              <button>
+                <a href="https://twitter.com/"
+                  ><img src="./img/icons8-twitter.svg" alt="tw"
+                /></a>
+              </button>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+This is my lecture.
+
+
+
+Media Queries
+    Responsive Web Design (RWD)
+
+    @media screen and (max-width:780px){
+      change the flex-direction of the container
+      .container.hero .row { flex-direction: column;}
+
+      .container.hero .column:first-child{
+        order:2;
+      }
+      .container.hero .column:last-child{
+        order:1;
+      }
+
+    }
+
+
+
+    

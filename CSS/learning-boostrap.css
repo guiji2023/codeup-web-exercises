@@ -1,0 +1,14 @@
+/* 
+declare page-wrapper class
+as the bootstrap does not have this class defined
+*/
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+.col {
+  border: 1px solid #ccc;
+}
