@@ -1,0 +1,20 @@
+@import url("resets.css");
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-width: 100dvh;
+}
+
+p {
+  margin: 0;
+}
+
+h4 {
+  color: rgb(32, 32, 230);
+}
+
+header.container {
+  border-bottom: 3px solid rgb(85, 134, 11);
+  padding-bottom: 20px;
+}
