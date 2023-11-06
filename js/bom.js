@@ -21,13 +21,10 @@
     }, 1000);
 
     //setTimeOut() method
-    const noAdds=setTimeout(() => {
+    const noAdds = setTimeout(() => {
         console.log(`PIKABOO!`)
 
     }, 5000);
-
-
-    const noAdBtn =
 
 
 })();
