@@ -11,6 +11,7 @@ body {
 
 .fancy-header {
     color: purple;
+    background-color: aqua;
 }
 
 
@@ -75,3 +76,15 @@ figure > :hover {
     transform: scale(1.1);
 }
 
+
+.display-none {
+    display: none;
+}
+
+.hero-box {
+    height: 500px;
+    width: 500px;
+    border: 2px solid black;
+    color: blue;
+    font-size: 80px;
+}

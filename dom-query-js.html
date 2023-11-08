@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>DOM: Query and Modify</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./css/style.css">
+
 </head>
 <body>
 
@@ -24,6 +29,22 @@
     pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
+
+<div class="container ">
+    <div class="row">
+        <div class="column">
+            <button class=myBTN1>myBtn1</button>
+            <button class=myBTN2>myBtn2</button>
+            <button class=myBTN3>myBtn3</button>
+            <button class=myBTN4>myBtn4</button>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="column justify-content-center">
+            <div class="hero-box border-5 w-100"></div>
+        </div>
+    </div>
+</div>
 <script>
     "use strict";
     // TODO: Uncomment next line and get the main header element by id
@@ -63,6 +84,8 @@
     // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
     subParagraphs[0].innerText = 'Mission Accomplished!';
 
+
 </script>
+<script src="js/dom-query-js.js"></script>
 </body>
 </html>
