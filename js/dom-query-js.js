@@ -21,15 +21,19 @@
 // });
 (() => {
   const h1 = document.querySelector("h1");
-  const p = document.querySelector("p");
-
+  const ps = document.querySelectorAll("p");
   const lis = document.querySelectorAll("li");
 
   document.body.addEventListener("click", (e) => {
     h1.style.backgroundColor = "red";
   });
-  document.body.addEventListener("dblclick", (e) => {
-    p.style.fontSize = "18px";
+
+  ps.forEach((i) => {
+    i.addEventListener("dblclick", (e) => {
+      ps.forEach((i) => {
+        i.style.fontSize = "18px";
+      });
+    });
   });
 
   lis.forEach((i) => {

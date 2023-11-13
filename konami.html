@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Konami Code</title>
+  </head>
+  <body>
+    <h1>Konami Code</h1>
+
+    <script>
+      "use strict";
+      let isRightCode;
+      const konamiCodes = [
+        "ArrowUp",
+        "ArrowUp",
+        "ArrowDown",
+        "ArrowDown",
+        "ArrowLeft",
+        "ArrowRight",
+        "ArrowLeft",
+        "ArrowRight",
+        "b",
+        "a",
+        "Enter",
+      ];
+      const len = 11;
+      let index = 0;
+
+      const handleKeys = (e) => {
+        let keyEntered = e.key;
+        if (keyEntered === konamiCodes[index]) {
+          alert("Right Code");
+        } else {
+          alert("Wrong Code");
+        }
+        index++;
+      };
+      document.addEventListener("keyup", handleKeys);
+    </script>
+  </body>
+</html>
