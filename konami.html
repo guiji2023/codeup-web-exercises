@@ -22,17 +22,17 @@
         "a",
         "Enter",
       ];
+      let konamiCodesStr = konamiCodes.join(" ");
+
       const len = 11;
       let index = 0;
-
+      let keysEntered = [];
       const handleKeys = (e) => {
-        let keyEntered = e.key;
-        if (keyEntered === konamiCodes[index]) {
-          alert("Right Code");
-        } else {
-          alert("Wrong Code");
+        keysEntered.push(e.key);
+
+        if (keysEntered.join(" ") === konamiCodesStr) {
+          console.log("You added 30 lives to the game!");
         }
-        index++;
       };
       document.addEventListener("keyup", handleKeys);
     </script>

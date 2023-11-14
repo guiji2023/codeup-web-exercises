@@ -1,0 +1,25 @@
+section {
+  display: flex;
+}
+
+.frame {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 40px;
+  &.picture1 {
+    background-image: url("./img/github.svg");
+  }
+  &.picture2 {
+    background-image: url("./img/icons8-facebook.svg");
+  }
+  &.picture3 {
+    background-image: url("./img/icons8-twitter.svg");
+  }
+}
+
+.swap {
+  position: absolute;
+  left: 40%;
+  bottom: 45%;
+}
