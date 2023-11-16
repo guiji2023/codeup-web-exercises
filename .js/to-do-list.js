@@ -7,14 +7,20 @@ const handleAddBtn = () => {
     console.log("hello");
     const maximum = 10;
 
-    if (liArr.length <= maximum) {
+    if (liArr.length < maximum) {
       if (input) {
         const liEliment = document.createElement("li");
+        liEliment.classList.add(
+          "to-do-item",
+          "list-group-item",
+          "d-flex",
+          "justify-content-between",
+          "align-items-center"
+        );
+
         liEliment.innerHTML = `
-        <li class="to-do-item list-group-item d-flex justify-content-between align-items-center">
           <p class="m-0">${input}</p>
           <button class="btn btn-danger">Done</button>
-        </li>
         `;
 
         liEliment.querySelector(".btn-danger").addEventListener("click", () => {
