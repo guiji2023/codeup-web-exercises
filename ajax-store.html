@@ -1,33 +1,59 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Online Store</title>
-</head>
-<body>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
-<h1>My Tool Store</h1>
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        padding: 100px;
+      }
+    </style>
+  </head>
 
-<table id="products">
-    <thead>
-        <tr>
+  <body>
+    <h1 class="text-center pb-4">My Tool Store</h1>
+
+    <div class="table-responsive">
+      <table
+        class="table table-striped table-hover table-borderless table-primary align-middle"
+      >
+        <thead class="table-warning py">
+          <tr>
             <th>Title</th>
             <th>Quantity</th>
             <th>Price</th>
             <th>Categories</th>
-        </tr>
-    </thead>
-    <tbody id="insertProducts"></tbody>
-</table>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider" id="insertProducts"></tbody>
+        <tfoot></tfoot>
+      </table>
+    </div>
 
-<script>
-    "use strict";
-    // TODO: Create an AJAX GET request for the file under data/inventory.json
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
 
-    // TODO: Take the data from inventory.json and append it to the products table
-    //       HINT: Your data should come back as a JSON object; use console.log() to inspect
-    //             its contents and fields
-    //       HINT: You will want to target #insertProducts for your new HTML elements
-</script>
-
-</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+      integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="/js/ajax-store.js"></script>
+  </body>
 </html>
