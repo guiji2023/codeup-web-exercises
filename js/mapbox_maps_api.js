@@ -46,16 +46,6 @@ const getCoordinates = async (searchText) => {
   return data.features[0].center;
 };
 
-const createMarker = async (restaurant, map) => {
-  const popup = new mapboxgl.Popup().setHTML(`<p> ${restaurant.name}</p>`);
-  const marker = new mapboxgl.Marker()
-    .setLngLat(await getCoordinates(restaurant.address))
-    .addTo(map)
-    .setPopup(popup);
-
-  return marker;
-};
-
 (async () => {
   const address1 = "200 Union St, B106, Westborough, MA, 01545";
   const coordinates1 = await getCoordinates(address1);
