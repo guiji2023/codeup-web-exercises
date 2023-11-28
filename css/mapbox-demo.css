@@ -1,0 +1,16 @@
+@import url("https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css")
+layer(mapbox);
+
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  width: 200px;
+  height: 50px;
+  margin: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
