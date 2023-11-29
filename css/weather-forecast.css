@@ -1,0 +1,35 @@
+@import url("https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css")
+layer(mapbox);
+
+.page-wrapper {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.heading {
+  font-size: 30px;
+}
+.forecast {
+  border: 2px solid brown;
+  width: 15%;
+
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 5px;
+}
+
+#map {
+  max-height: 800px;
+}
+h3 {
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 15px;
+}
