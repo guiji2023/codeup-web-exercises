@@ -42,7 +42,50 @@ export const createMap = (coordinates) => {
     speed: 0.5,
   });
 
-  const marker = new mapboxgl.Marker().setLngLat(coordinates).addTo(map);
-
   return map;
+};
+
+/**
+ *
+ * @param {number} lng - longitude
+ * @param {number} lat - latitude
+ * @returns {string} city
+ */
+
+export const getAddress = async (lng, lat) => {
+  // just in case the input argument is an array of [lng, lat];
+  if (Array.isArray(lng)) {
+    lat = lng[1];
+    lng = lng[0];
+  }
+  const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${lng},${lat}.json?access_token=${keys.mapbox}`;
+  const options = {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+  const response = await fetch(url, options);
+  const data = await response.json();
+
+  return data.features[0].place_name;
+};
+
+export const getAddressCity = async (lng, lat) => {
+  // just in case the input argument is an array of [lng, lat];
+  if (Array.isArray(lng)) {
+    lat = lng[1];
+    lng = lng[0];
+  }
+  const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${lng},${lat}.json?access_token=${keys.mapbox}`;
+  const options = {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+  const response = await fetch(url, options);
+  const data = await response.json();
+
+  return data;
 };

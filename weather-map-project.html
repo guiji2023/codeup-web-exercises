@@ -21,22 +21,26 @@
 
   <body>
     <div class="page-wrapper p-5">
-      <div class="container-fluid d-flex flex-column">
-        <div class="row my-5 d-flex gap-5">
-          <div class="col-7">
-            <h2 class="text-capitalize text-end heading">weekly forecast</h2>
-          </div>
-          <form class="col-4 d-flex justify-content-end gap-4">
-            <label for="address"></label>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="column d-flex justify-content-between">
+            <div ><span class="city">City</span></div>
             <input
               value=""
               type="text"
-              class="search rounded-2 border-1 w-75"
+              class="search rounded-2 border-1 w-50"
               id="address"
+              placeholder="    Enter Your City"
             />
-      
-          </form>
+    
+    
+          </div>
+        </div>
+      </div>
 
+      <div class="container-fluid d-flex flex-column">
+        <div class="row my-5 d-flex gap-5">
+          
           <div class="forecastContainer col d-flex forecasts justify-content-evenly gap-2">
             <div class="forecast">
               <h3>Date</h3>

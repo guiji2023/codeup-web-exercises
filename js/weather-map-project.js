@@ -1,4 +1,4 @@
-import { getCoordinates, createMap } from "./api/mapBoxAPI.js";
+import { getCoordinates, createMap, getAddressCity } from "./api/mapBoxAPI.js";
 import { getForcast } from "./api/openWeatherAPI.js";
 
 const convertTMtoDay = (dt) => {
@@ -12,7 +12,7 @@ const convertTMtoDay = (dt) => {
     "Saturday",
   ];
   let time = new Date(dt * 1000);
-  let date = time.getMonth() + "-" + time.getDate();
+  let date = time.getMonth() + 1 + "-" + time.getDate();
   let day = daysOfWeek[time.getDay()];
   return [date, day];
 };
@@ -33,11 +33,12 @@ const refineData = (data) => {
   return forecasts;
 };
 
-const updateAddress = async (e) => {
-  const address = e.target.value;
-  const coords = await getCoordinates(address);
-  await createMap(coords);
-  return coords;
+const createMarker = (coordinates, map) => {
+  const marker = new mapboxgl.Marker({ draggable: true })
+    .setLngLat(coordinates)
+    .addTo(map);
+
+  return marker;
 };
 
 const renderCard = (forecast) => {
@@ -63,22 +64,64 @@ const renderCards = (forecasts) => {
   });
 };
 
-(async () => {
-  // const [lng, lat] = await getCoordinates(address);
-  // await createMap([lng, lat]);
-  // // const reports = await getForcast(lat, lng);
-  // // console.log(reports);
+const handleDragEnd = async (e, map) => {
+  const lng = e.target._lngLat.lng;
+  const lat = e.target._lngLat.lat;
+  // make the map fly to the new dragged location
+  map.flyTo({
+    center: [lng, lat],
+    zoom: 12,
+    speed: 0.5,
+  });
 
-  //get user input
+  const data = await getForcast([lat, lng]);
+  const forecasts = refineData(data);
+  renderCards(forecasts);
+};
+
+const updateCity = async (lng, lat) => {
+  const data = await getAddressCity(lng, lat);
+  const city =
+    data.features[2].context[0].text + ", " + data.features[2].context[2].text;
+
+  const cityDOM = document.querySelector(".city");
+  cityDOM.innerHTML = "";
+  cityDOM.innerHTML = `${city}`;
+};
+
+(async () => {
+  const [mylng, mylat] = [-71.7140618, 42.2809127];
+  await updateCity(mylng, mylat);
+  const map = await createMap([mylng, mylat]);
+  const marker = createMarker([mylng, mylat], map);
+  const data = await getForcast(mylat, mylng);
+  const forecasts = refineData(data);
+  renderCards(forecasts);
+  marker.on("dragend", async (e) => {
+    updateCity(e.target._lngLat.lng, e.target._lngLat.lat);
+    handleDragEnd(e, map);
+  });
+
   const userInput = document.querySelector("input");
   userInput.addEventListener("change", async (e) => {
     //get coordinates and create map
-    let coords = await updateAddress(e);
+    const address = e.target.value;
+    let coords = await getCoordinates(address);
+    await updateCity(coords[0], coords[1]);
+    const map = await createMap(coords);
+    const marker = createMarker(coords, map);
+
+    //create forecast
     let [a, b] = coords;
     const newCoords = [b, a];
     const data = await getForcast(newCoords);
     const forecasts = refineData(data);
-    console.log(forecasts);
     renderCards(forecasts);
+
+    //drag marker
+    marker.on("dragend", async (e) => {
+      updateCity(e.target._lngLat.lng, e.target._lngLat.lat);
+      handleDragEnd(e, map);
+    });
   });
 })();

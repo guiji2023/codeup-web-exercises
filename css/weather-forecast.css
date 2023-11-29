@@ -5,15 +5,31 @@ layer(mapbox);
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  background-image: url("../img/weather-map-project/sky.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+span.city {
+  max-width: 200px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #413434;
+}
+
+form {
+  right: 350px;
+  top: 50px;
+  max-width: 250px;
 }
 
 .heading {
   font-size: 30px;
 }
 .forecast {
-  border: 2px solid brown;
+  border: 5px solid #eee;
   width: 15%;
-
   border-radius: 25px;
   display: flex;
   flex-direction: column;
@@ -22,14 +38,25 @@ layer(mapbox);
   gap: 5px;
 }
 
-#map {
-  max-height: 800px;
-}
 h3 {
-  font-size: 20px;
+  font-size: 30px;
   text-transform: uppercase;
 }
 
 h2 {
-  font-size: 15px;
+  font-size: 25px;
+}
+
+input {
+  border: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+input::placeholder {
+  font-size: 1.5rem;
+  font-weight: bold;
+  opacity: 0.8;
 }

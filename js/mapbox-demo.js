@@ -31,8 +31,9 @@ const getAddress = async (lng, lat) => {
   };
   const response = await fetch(url, options);
   const data = await response.json();
+  console.log("hello world");
 
-  return data.features[0].place_name;
+  return data.features[0].text;
 };
 
 const handleDragEnd = async (e, map) => {
@@ -45,7 +46,6 @@ const handleDragEnd = async (e, map) => {
     speed: 0.5,
   });
   const address = await getAddress(lng, lat);
-  console.log(address);
 };
 
 (async () => {
