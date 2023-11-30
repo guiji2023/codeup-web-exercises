@@ -90,10 +90,14 @@ const updateCity = async (lng, lat) => {
 };
 
 (async () => {
+  // my default city
   const [mylng, mylat] = [-71.7140618, 42.2809127];
   await updateCity(mylng, mylat);
   const map = await createMap([mylng, mylat]);
   const marker = createMarker([mylng, mylat], map);
+
+  // handle map actions
+
   const data = await getForcast(mylat, mylng);
   const forecasts = refineData(data);
   renderCards(forecasts);
